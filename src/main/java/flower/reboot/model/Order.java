@@ -27,7 +27,8 @@ public class Order {
     }
 
     public boolean processOrder() {
-        if (deliveryStrategy.deliver(items) && paymentStrategy.pay(calculateTotalPrice())) {
+        if (deliveryStrategy.deliver(items) 
+        && paymentStrategy.pay(calculateTotalPrice())) {
             return true;
         }
         return false;

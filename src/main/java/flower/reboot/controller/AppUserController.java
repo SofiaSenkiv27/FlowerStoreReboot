@@ -15,29 +15,29 @@ import flower.reboot.service.AppUserService;
 
 @RestController
 @RequestMapping("/api/v1")
-public class AppUserController {
+public class AppUserController { 
     private final AppUserService appUserService;
 
     @Autowired
-    public AppUserController(AppUserService appUserService) {
+    public AppUserController(AppUserService appUserService) { 
         this.appUserService = appUserService;
     }
 
     @GetMapping("/user")
-    public List<AppUser> getAppUsers() {
+    public List<AppUser> getAppUsers() { 
         return appUserService.getAppUsers();
     }
 
     @PostMapping("/user")
-    public AppUser createAppUser(@RequestBody AppUser appuser) {
+    public AppUser createAppUser(@RequestBody AppUser appuser) { 
         return appUserService.createAppUser(appuser);
     }
 
     @GetMapping("/user/email")
-    public ResponseEntity<AppUser> getUserByEmail(@RequestParam String email){
+    public ResponseEntity<AppUser> getUserByEmail(@RequestParam String email){ 
         AppUser userByEmail = appUserService.getUserByEmail(email);
 
-        if (userByEmail != null){
+        if (userByEmail != null){ 
             return ResponseEntity.ok(userByEmail);
 
         }
