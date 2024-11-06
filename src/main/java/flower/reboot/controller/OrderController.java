@@ -22,8 +22,11 @@ public class OrderController {
         order.setDeliveryStrategy(new DHLDeliveryStrategy());
         order.setPaymentStrategy(new CreditCardPaymentStrategy());
 
-        return order.processOrder() 
-        ? "Order processed successfully" 
-        : "Order processing failed";
+        boolean result = order.processOrder(); 
+        if (result) {
+            return "Order processed successfully";
+        } else {
+            return "Order processing failed";
+        }
     }
 }

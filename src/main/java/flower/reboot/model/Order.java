@@ -18,13 +18,13 @@ public class Order {
         return items.stream().mapToDouble(Item::getPrice).sum();
     }
 
-    public void setPaymentStrategy(Payment paymentStrategy) {
-        this.paymentStrategy = paymentStrategy;
+    public void setPaymentStrategy(Payment payment) {
+        this.paymentStrategy = payment;
     }
-
-    public void setDeliveryStrategy(Delivery deliveryStrategy) {
-        this.deliveryStrategy = deliveryStrategy;
-    }
+    
+    public void setDeliveryStrategy(Delivery delivery) {
+        this.deliveryStrategy = delivery;
+    }    
 
     public boolean processOrder() {
         if (deliveryStrategy.deliver(items) 

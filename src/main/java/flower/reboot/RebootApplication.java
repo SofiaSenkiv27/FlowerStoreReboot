@@ -8,6 +8,6 @@ public class RebootApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(RebootApplication.class, args);
-	}
+    }
 
 }
