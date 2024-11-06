@@ -34,10 +34,10 @@ public class AppUserController {
     }
 
     @GetMapping("/user/email")
-    public ResponseEntity<AppUser> getUserByEmail(@RequestParam String email){ 
+    public ResponseEntity<AppUser> getUserByEmail(@RequestParam String email) { 
         AppUser userByEmail = appUserService.getUserByEmail(email);
 
-        if (userByEmail != null){ 
+        if (userByEmail != null) { 
             return ResponseEntity.ok(userByEmail);
 
         }
